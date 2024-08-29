@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    body{
+        background-color: palegoldenrod;
+    }
+    .class{
+        background-color: wheat;
+        border: 5px solid red;
+        height: 200px;
+        width: 600px;
+        margin-bottom: 8%;
+        margin-left: 30%;
+        margin-top: 8%;  
+    }
+    input{
+        background-color:papayawhip;
+        font-size: 18px;
+        text-align: center;
+        width: 200px;
+        margin-top: 5%;
+        padding-right: 3px;
+    }
+    ul{
+        background-color: brown;
+        height: 30px;
+        margin: 3%;
+        padding: 5px;
+    }
+    label{
+        padding-left: 65px;
+    }
+</style>
+<body>
+    <div>
+        <ul>
+            <a href="dashboard.html"><i class="fa-sharp fa-solid fa-arrow-left fa-2xl" style="color: #FFD43B;"></i></a>
+        </ul>
+    </div>
+    <div class="class">
+    
+        <label><strong>Enter amount:</strong></label>
+        <input type="number" placeholder="enter amount" id="ammount">
+        <button onclick="submit()">submit</button>
+        <h1 id="credit"></h1>
+    
+    </div>
+
+    <script>
+        let pin = prompt("Enter 4 digit pin:")
+         while(pin!=="3456"){
+        alert("please enter valid pin");
+        pin = prompt("Enter your four digit pin");
+        }
+        alert("success")
+
+
+
+      let fixamount = 50000;
+      function submit() {
+        let user = parseInt(document.getElementById("ammount").value);
+        let totalammount = user+fixamount;
+
+        document.getElementById("credit").innerHTML ="totalbalance ="+totalammount;
+      }
+
+        
+    </script>
+</body>
+</html>

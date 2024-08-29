@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<style>
+    body{
+        background-color: palegoldenrod;
+    }
+    h1{
+    background-color: red;
+    padding-top: 30px;
+    text-align: center;
+    
+    }
+    .button{
+        background-color: wheat;
+        color: red;
+        border-radius: 5px;
+        padding: 10px 20px;
+    }
+    .button:hover{
+        background-color: bisque;
+    }
+    .button1{
+        background-color: grey;
+        color: white;
+        border-radius: 5px;
+        padding: 10px 20px;
+
+    }
+    .button1:hover{
+        background-color: powderblue;
+        color: black;
+    }
+    .home-button-container{
+        margin: 2%;
+    }
+    .button{
+        margin: 3px;
+        margin-left: 8%;
+    }
+</style>
+<body>
+    <div class="home-button-container">
+        <a href="dashboard.html"><button type="button" class="home-button"><i class="fa-solid fa-house fa-xl"></i>HOME</button></a>
+    </div>
+    <br>
+    <br>
+    <div class="container">
+    <h1>ACCOUNT DETAILS</h1>
+    <div class="card">
+     <div class="card-body">
+        <h5 class="card-title"><u>Accounr Information</u></h5>
+        <p class="card-text">
+            <strong>Account holder Name:</strong>B.Bhagyashree <br>
+            <br>
+            <strong>Account Number:</strong>4762982213 <br>
+            <br>
+            <strong>Account type:</strong>Savings <br>
+            <br>
+            <strong>Current Balance:</strong>50000 <br>
+        </p>
+     </div>
+    </div>
+    <br>
+    <!------buttons-->
+        <div class="row">
+            <div class="col-sm-6">
+        <a href="credit.html"><button class="button">Credit</button></a>
+        </div>
+            <div class="col-sm-6">
+                <a href="debit.html"><button class="button1">Debit</button></a>
+                </div>
+                    
+        </div>
+</div>
+
+<script>
+        let pin = prompt("Enter 4 digit pin:")
+        while(pin!=="3456"){
+         alert("please enter valid pin");
+            pin = prompt("Enter your four digit password");
+          }
+            alert("success")
+</script>
+    
+</body>
+</html>

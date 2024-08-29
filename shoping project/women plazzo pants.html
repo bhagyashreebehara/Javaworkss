@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+        #products{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 30px;
+    }
+    .box{
+      border: 5px solid ;
+     border-radius: 5px;
+     padding: 5px ;
+     margin: 20px;
+     height: 400px;
+     width:  300px;  
+    }  
+    .box img{
+        width: 100%;
+     height: 300px;
+    }  
+    .box:hover{
+        box-shadow: 0 12px 16px 0;
+      transform: scale(1.05);
+    }
+     
+</style>
+<body>
+     
+    <input type="number" id="min-price" placeholder="min price">
+    <input   type="number" id="max-price" placeholder="max price">
+    <button id="apply-filter">applyfilter</button>
+
+    <div id="products">
+    <div class="box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq1j7Uhasp36LLRElqVZpkV2lwH_jK6lukHA&s" alt="">
+        <h1  class="price">$ 500</h1>
+    </div>
+    <div class="box">
+        <img src="https://img3.exportersindia.com/product_images/bc-full/2022/4/10113008/ladies-palazzo-pant-1650357897-6296480.jpeg"  alt="">
+        <h1  class="price">$ 1000</h1>
+    </div>
+    <div class="box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ9ZVKVvZtEkN2OLuEWLd4fr3u0mVaBcluXw&=" alt="">
+        <h1  class="price">$ 800</h1>
+    </div>
+    <div class="box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0lR0HJgYTjB3sqL_NKd5IaJCUkCBm0BP6rQ&s"  alt="">
+        <h1  class="price">$ 500</h1>
+    </div>
+    <div class="box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQh_My5IFBNe2jEnfTZi2_Z2Oyy78_nloxt-Q&s"  alt="">
+        <h1  class="price">$ 800</h1>
+    </div>
+    <div class="box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPO0jHJKtrnzf8IOdkjFPxNleXwjOz1LnhEw&s" alt="">
+         <h1  class="price">$ 500</h1>
+    </div>
+    <div class="box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwnxwvjUfRFzI-GYxAgkLlQlpNQ9dWayYloQ&s"  alt="">
+        <h1  class="price">$ 1000</h1>
+    </div>
+    <div class="box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA-dsAcSOUK4bhjejxepEpzGY0c3bmaBebHw&s"  alt="">
+        <h1  class="price">$ 500</h1>
+
+    </div>
+    <div class="box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTTXpD3VQp_qWm0sftgQxm1XReY0FffEStdg&s"  alt="">
+        <h1  class="price">$ 500</h1>
+
+    </div>
+    <div class="box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtwKSzifeFnBe0eyiW0M3dhLfaaH7wR745Vg&s"  alt="">
+        <h1  class="price">$ 500</h1>
+    
+    </div>
+    <div class="box">
+        <img src="https://images.meesho.com/images/products/295049890/c7rui_512.webp"  alt="">
+        <h1  class="price">$ 700</h1>
+    
+    </div>
+    <div class="box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb2vzdqgWUKSApjWb-6-p1M0UlSADH8udfHA&s"  alt="">
+        <h1  class="price">$ 500</h1>
+    
+    </div>
+</div>
+<script>
+    const products = document.querySelectorAll('.box');
+    document.getElementById('apply-filter').addEventListener('click',applyFilter);
+
+
+
+    function applyFilter() {
+        const minPrice = parseInt(document.getElementById('min-price').value);
+        const maxPrice = parseInt(document.getElementById('max-price').value);
+
+
+
+   products.forEach((box) =>{
+    const price = parseInt(box.querySelector('.price').textContent.replace('$',''));
+    if (price >= minPrice && price <= maxPrice ){
+        box.style.display = 'block';
+    }
+    else{
+        box.style.display = 'none';
+    }
+   });
+        
+    }
+ </script>
+</body>
+</html>

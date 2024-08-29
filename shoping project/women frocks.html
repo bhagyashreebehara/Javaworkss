@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+#products{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 30px;
+    }
+    .box{
+      border: 5px solid ;
+     border-radius: 5px;
+     padding: 5px ;
+     margin: 20px;
+     height: 400px;
+     width:  300px;  
+    }  
+    .box img{
+        width: 100%;
+     height: 300px;
+    }
+    .box:hover{
+        box-shadow: 0 12px 16px 0;
+      transform: scale(1.05);
+    }
+</style>
+<body>
+    <input type="number" id="min-price" placeholder="min price">
+    <input   type="number" id="max-price" placeholder="max price">
+    <button id="apply-filter">applyfilter</button>
+ 
+    <div id="products">
+    <div class="box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRCtzdoeQ822t0adgomZY01cB7t_cmKC7xtg&s" height="300" width="100%" alt="">
+         <h1  class="price">$ 500</h1>
+    
+    </div>
+    <div class="box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj6rNAavJsSZFhQO5M238wi7i62dvzqu0hSg&s" height="300" width="100%" alt="">
+         <h1  class="price">$ 500</h1>
+    
+    </div>
+    <div class="box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkZa9WcUTKqPesWKep3atdGjgKoHYa-V97tg&s" height="300" width="100%" alt="">
+        <h1  class="price">$ 600</h1>
+    
+    </div>
+    <div class="box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhgZ9GiFnKx03Pv4sSrWZSptcnTzWMDMp_7A&s" height="300" width="100%" alt="">
+        <h1  class="price">$ 800</h1>
+    
+    </div>
+    <div class="box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgAfDli75NAqaecEujfsbtfA6-j4yDI8Z1zA&s" height="300" width="100%" alt="">
+        <h1  class="price">$ 700</h1>
+    
+    </div>
+    <div class="box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAlJNOFSVUGINhgiaaKzaw8S2-I8ryBuywXA&s" height="300" width="100%" alt="">
+        <h1  class="price">$ 650</h1>
+    
+    </div>
+    <div class="box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU7vYK_HXE4m90CN632PyDIefYhaUf5XOcig&s" height="300" width="100%" alt="">
+        <h1  class="price">$ 800</h1>
+    
+    </div>
+    <div class="box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv7gql5-zSjoxEqo3v88C2CTsIKvp4XMMn6g&s" height="300" width="100%" alt="">
+        <h1  class="price">$ 700</h1>
+    
+    </div>
+    <div class="box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4MJuwpHRdOMYA1qO53_OuOXI3dr2pVwDBLg&s" height="300" width="100%" alt="">
+        <h1  class="price">$ 1000</h1>
+    
+    </div>
+    <div class="box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3nKSCDMrecDg5O97gAZPNKmJpCJsKX0--FQ&s" height="300" width="100%" alt="">
+       <h1  class="price">$ 900</h1>
+    
+    </div>
+    <div class="box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe95Xg5DWGXrPmluC70YX4-2tvKPOfuAqzYw&s" height="300" width="100%" alt="">
+       <h1  class="price">$ 500</h1>
+    
+    </div>
+    <div class="box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5UpQvT4aJ0aHKpzIfZWTl3AJE02ouCZT1Zw&s" height="300" width="100%" alt="">
+        <h1  class="price">$ 1000</h1>
+    
+    </div>
+</div>
+<script>
+    const products = document.querySelectorAll('.box');
+    document.getElementById('apply-filter').addEventListener('click',applyFilter);
+
+
+
+    function applyFilter() {
+        const minPrice = parseInt(document.getElementById('min-price').value);
+        const maxPrice = parseInt(document.getElementById('max-price').value);
+
+
+
+   products.forEach((box) =>{
+    const price = parseInt(box.querySelector('.price').textContent.replace('$',''));
+    if (price >= minPrice && price <= maxPrice ){
+        box.style.display = 'block';
+    }
+    else{
+        box.style.display = 'none';
+    }
+   });
+        
+    }
+ </script>
+</body>
+</html>

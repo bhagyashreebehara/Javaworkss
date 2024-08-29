@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #products{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 30px;
+    }
+    .box{
+      border: 5px solid ;
+     border-radius: 5px;
+     padding: 5px ;
+     margin: 20px;
+     height: 400px;
+     width:  300px;  
+    }  
+    .box img{
+        width: 100%;
+     height: 300px;
+    } 
+    .box:hover{
+        box-shadow: 0 12px 16px 0;
+      transform: scale(1.05);
+    } 
+</style>
+<body>
+    <input type="number" id="min-price" placeholder="min price">
+    <input   type="number" id="max-price" placeholder="max price">
+    <button id="apply-filter">applyfilter</button>
+ 
+    <div id="products">
+    <div class="box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCIG0Y4H5V8eXJfxWtOIDhJG4MTWRiIVqr8A&s" alt="">
+  <h1>$ 500</h1>
+    
+    </div>
+    <div class="box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvvSU-ZYRShMqQoQrJZm3j5B0nobtplOSuxA&s"  alt="">
+  <h1>$ 760</h1>
+    
+    </div>
+    <div class="box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBzUE8oh7d1WscV1mTSyJMbdO1U_5Ec8D2nw&s" alt="">
+  <h1>$ 870</h1>
+    
+    </div>
+    <div class="box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrW5DE0l0HExqb9u68obZ9ODD8XKZOipbTXA&s" alt="">
+  <h1>$ 800</h1>
+    
+    </div>
+    <div class="box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3Uluwn8Poi6J_U6j1XqcsA2vWdgEEN1_Hzg&s"  alt="">
+  <h1>$ 500</h1>
+    
+    </div>
+    <div class="box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReSPReUxccnX5PDjS8BPiDJAEgjK4mshzCIg&s"  alt="">
+  <h1>$ 980</h1>
+    
+    </div>
+    <div class="box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ94R1t6bnSNQ8j-cqchgHR0gjBJysV58To9w&s" alt="">
+  <h1>$ 600</h1>
+    
+    </div>
+    <div class="box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScVkfaDRJtg4LDOWuqWW8CyzrY-ILqvcK4pg&s"  alt="">
+  <h1>$ 700</h1>
+    
+    </div>
+    <div class="box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3i6dha2tQzNV5oy626aDlr4vX-qYdyKIfaA&s" alt="">
+  <h1>$ 890</h1>
+    
+    </div>
+    <div class="box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCvVN-zvlJl_NHGiQJsAlw1iKdLEYDfCZnkw&s" alt="">
+  <h1>$ 500</h1>
+    
+    </div>
+    <div class="box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLI83GWSWYY-DGrRP-BjwOrfXkPJPo0q2CwQ&s"  alt="">
+  <h1>$ 700</h1>
+    
+    </div>
+    <div class="box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmTVxTPdSqwCUw8u2XtErMQN77S5sbEGKlmA&s"  alt="">
+  <h1>$ 900</h1>
+    
+    </div>
+</div>
+
+
+<script>
+    
+    const products = document.querySelectorAll('.box');
+    document.getElementById('apply-filter').addEventListener('click',applyFilter);
+
+
+
+    function applyFilter() {
+        const minPrice = parseInt(document.getElementById('min-price').value);
+        const maxPrice = parseInt(document.getElementById('max-price').value);
+
+
+
+   products.forEach((box) =>{
+    const price = parseInt(box.querySelector('.price').textContent.replace('$',''));
+    if (price >= minPrice && price <= maxPrice ){
+        box.style.display = 'block';
+    }
+    else{
+        box.style.display = 'none';
+    }
+   });
+        
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #products{
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     padding: 30px;
+    }
+    .box{
+     border: 5px solid ;
+     border-radius: 5px;
+     padding: 5px ;
+     margin: 20px;
+     width: 300px;
+     height: 400px;
+     text-align: center;
+    
+    }
+    .box img{
+        width: 100%;
+     height: 300px;
+    }
+    .box:hover{
+        color: black;
+        transform: scale(1.03);
+    }
+</style>
+<body>
+    <input type="number" id="min-price" placeholder="min price">
+    <input type="number" id="max-price" placeholder="max price">
+    <button id="apply-filter">applyfilter</button>
+ 
+    <div id="products">
+        <div class="box">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7HDCErNXWSDHTLtWoEAluk9KG9Bqr75kUaw&s" alt="">
+              <h1 class="price">$ 300</h1>
+        </div>
+        <div class="box">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKH7y6EWp0js5rJH3NHWnfa2NoTmkuOLCmsA&s" alt="">
+            <h1 class="price">$ 600</h1>
+         
+        </div>
+        <div class="box">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQruwvV-5RUTd_VsRhn7Z3sw69mn34D0qqvSw&s" alt="">
+            <h1 class="price">$ 780</h1>
+        
+        </div>
+        <div class="box">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvUDDgTPXp3o2olRmxHDfCERgjY1He5Xjkag&s" alt="">
+            <h1 class="price">$ 670</h1>
+        
+        </div>
+        <div class="box">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ6uk4xaiRhOUPWpNIwjS5F9GOPds95amhbg&s" alt="">
+            <h1 class="price">$ 700</h1>
+          
+        </div>
+        <div class="box">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxx3UsWHvL2vZe3ERW0qaQqgcoYsl55twgFg&s" alt="">
+            <h1 class="price">$ 890</h1>
+        
+        </div>
+        <div class="box">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2Fw2ONo_8sfQiEtXXLgvIc28hLJ4meftv4w&s" alt="">
+            <h1 class="price">$ 670</h1>
+       
+        </div>
+        <div class="box">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQDSAIVHpRycOkhJXTlQW1bPFoZgqzDCQkkA&s" alt="">
+            <h1 class="price">$ 700</h1>
+        
+        </div>
+        <div class="box">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3NDoofDgLB6nGj42DlGGuMUBxXbACCV06aA&s" alt="">
+            <h1 class="price">$ 800</h1>
+        
+        </div>
+        <div class="box">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiMbfngGK6neMq8f4SMqyU-D1_0htoFMrVrw&s" alt="">
+            <h1 class="price">$ 900</h1>
+         
+        </div>
+        <div class="box">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCqAMWm-fXX_chzArhGyzRxBQuCmZwVPt-KQ&s" alt="">
+            <h1 class="price">$ 380</h1>
+        
+        </div>
+        <div class="box">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7QjPYLo6_3HwBI0ty8qCGheIs3jz2_NL0yw&s" alt="">
+            <h1 class="price">$ 700</h1>
+         
+        </div>
+    </div>
+
+    <script>
+            const products = document.querySelectorAll('.box');
+    document.getElementById('apply-filter').addEventListener('click',applyFilter);
+
+
+
+    function applyFilter() {
+        const minPrice = parseInt(document.getElementById('min-price').value);
+        const maxPrice = parseInt(document.getElementById('max-price').value);
+
+
+
+   products.forEach((box) =>{
+    const price = parseInt(box.querySelector('.price').textContent.replace('$',''));
+    if (price >= minPrice && price <= maxPrice ){
+        box.style.display = 'block';
+    }
+    else{
+        box.style.display = 'none';
+    }
+   });
+        
+    }
+    </script>
+</body>
+</html>
