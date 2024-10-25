@@ -8,18 +8,29 @@
 </head>
 <style>
     body{
-        background-image:url(https://st4.depositphotos.com/1019178/20282/i/450/depositphotos_202821714-stock-photo-abstract-white-modern-background-of.jpg) ;
+       background-color: rgb(171, 110, 185);
     }
     .box{
+        border:3px solid black;
+        backdrop-filter:blur(50px);
+        box-shadow: 4px 5px 10px blueviolet;
+        border-radius:10px;
+        padding:5%;
+        transition: 0.3s;
+        animation-name:anime;
+        animation-duration:1s;
+        animation-iteration-count:1;
+        background-color: blueviolet;
         height: 300px;
-        width: 400px;
-        border-radius: 20px;
-        border: 5px solid;
-        background-color: wheat;
+    }
+    @keyframes anime{
+        0%{transform:translateY(60px);opacity:0.5;}
+        100%{transform:translateY(0);opacity:1;}
     }
     .box:hover{
-        background-color: aqua;
-        transform: scale(1.05);
+        transform:scaleY(120%);
+        background-color: black;
+        color: #fff;
     }
     .container{
         display: flex;
@@ -33,10 +44,18 @@
     h1{
         color: brown;
         text-align: center;
-        padding: 8%;
+        
     }
-    .btn{
-        margin: 100px;
+    .button{
+        margin:30% 0 0 20%;
+        background-color: aquamarine;
+        height:25%;
+        border-radius:20px;
+        transition:0.5s;
+    }
+    .button:hover{
+        background:linear-gradient(darkcyan);
+        transform:scale(90%);
     }
 </style>
 <body>
@@ -45,19 +64,19 @@
         <div class="box">
             <a href="./transaction/dashboard.html">
                 <h1>TRANSACTION</h1>
-                <button class="btn btn-outline-primary">CLICK HERE</button></a>
+                <button class="button">CLICK HERE</button></a>
         </div>
         <!----------box2------->
         <div class="box">
             <a href="./shoping project/shopping.html">
             <h1>SHOPPING</h1>
-            <button class="btn btn-outline-success">CLICK HERE</button></a>
+            <button class="button">CLICK HERE</button></a>
         <!--------box3-------->
     </div>
     <div class="box">
         <a href="./apicalling/indexapicalling.html">
         <h1>API CALLING</h1>
-        <button class="btn btn-outline-danger">CLICK HERE</button></a>
+        <button class="button">CLICK HERE</button></a>
 </div>
 </div>
 </body>

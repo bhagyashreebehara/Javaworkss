@@ -8,17 +8,43 @@
 <style>
     .main{
         display: flex;
+        flex-wrap: wrap;
+            gap: 1%;
+            justify-content: space-around;
     }
     .box{
-      border: 5px solid ;
-     border-radius: 10px;
-     padding: 10px ;
-     margin: 20px;
-     height: 400px;
-     width:  100%;  
+        width: 100%;
+            max-width: 300px;
+            margin: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+            animation-name:nav;
+            animation-iteration-count:1;
+            animation-duration:1s;
+            transition:0.3s;  
+    }
+    @keyframes nav{
+          0%{transform:translateX(60px);
+              opacity:0.5;}
+              100%{transform:translate(0);
+              opacity: 1;}
+        }
+    .box:hover{
+        transform:scale(110%);
+        box-shadow:8px 5px 10px darkgray;
+    }
+    .box img{
+        height: auto;
+            max-height:200px;
+            width: auto;
+            max-width:250px;
+            padding-left:40px;
     }
     .main1{
         display: flex;
+            flex-wrap: wrap;
+            gap: 1%;
+            justify-content: space-around;
     }
 </style>
 <body>
